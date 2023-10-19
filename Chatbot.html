@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Recommendation System</h1>
+    </header>
+    <div class="container">
+        <label for="genre">Select a Genre:</label>
+        <select id="genre">
+            <option value="fantasy">Fantasy</option>
+            <option value="mystery">Mystery</option>
+            <option value="science-fiction">Science Fiction</option>
+            <option value="romance">Romance</option>
+        </select>
+
+        <label for="author">Select an Author:</label>
+        <select id="author">
+            <option value="author1">Author 1</option>
+            <option value="author2">Author 2</option>
+            <option value="author3">Author 3</option>
+            <!-- Add more authors as needed -->
+        </select>
+
+        <label for="rating">Minimum Rating:</label>
+        <input type="number" id="rating" min="0" max="5" step="0.1" value="3" />
+
+        <button onclick="getRecommendations()">Get Recommendations</button>
+
+        <h2>Recommended Books:</h2>
+        <ul id="recommendations">
+            <!-- Recommendations will be displayed here -->
+        </ul>
+    </div>
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "b71790d7-d7ff-4d17-aee6-e5d44daf2e03", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "07d2630d-5968-40b0-a011-18d68fa8c022", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+    <script>
+        // JavaScript code for book recommendations (same as before)
+    </script>
+</body>
+</html>
